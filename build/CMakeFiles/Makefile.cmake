@@ -206,7 +206,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "pico-sdk/src/rp2_common/tinyusb/CMakeFiles/CMakeDirectoryInformation.cmake"
   "pico-sdk/src/rp2_common/pico_stdio_usb/CMakeFiles/CMakeDirectoryInformation.cmake"
   "pico-sdk/src/rp2_common/cyw43_driver/pioasm/tmp/PioasmBuild-cfgcmd.txt"
-  "pico-sdk/src/rp2_common/cyw43_driver/pioasm/tmp/PioasmBuild-cache-Release.cmake"
+  "pico-sdk/src/rp2_common/cyw43_driver/pioasm/tmp/PioasmBuild-cache-Debug.cmake"
   "pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/CMakeDirectoryInformation.cmake"
   "pico-sdk/src/rp2_common/pico_lwip/CMakeFiles/CMakeDirectoryInformation.cmake"
   "pico-sdk/src/rp2_common/pico_cyw43_arch/CMakeFiles/CMakeDirectoryInformation.cmake"

@@ -67,4 +67,5 @@ CMakeFiles/audio.dir/home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
  /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/device/usbd.h \
  /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.h \
  /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc.h \
- /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/device/usbd_pvt.h
+ /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/device/usbd_pvt.h \
+ /usr/include/newlib/ctype.h

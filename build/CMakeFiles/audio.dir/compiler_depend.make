@@ -998,7 +998,8 @@ CMakeFiles/audio.dir/home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
   /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/device/usbd.h \
   /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.h \
   /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc.h \
-  /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/device/usbd_pvt.h
+  /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/device/usbd_pvt.h \
+  /usr/include/newlib/ctype.h
 
 CMakeFiles/audio.dir/home/tom/Documents/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj: /home/tom/Documents/pico/pico-sdk/src/common/pico_sync/critical_section.c \
   /home/tom/Documents/pico/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
@@ -2970,8 +2971,6 @@ CMakeFiles/audio.dir/home/tom/Documents/pico/pico-sdk/src/rp2_common/pico_unique
 
 /home/tom/Documents/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h:
 
-/home/tom/Documents/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h:
-
 /home/tom/Documents/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c:
 
 /home/tom/Documents/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c:
@@ -3043,6 +3042,8 @@ CMakeFiles/audio.dir/home/tom/Documents/pico/pico-sdk/src/rp2_common/pico_unique
 /home/tom/Documents/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h:
 
 /home/tom/Documents/pico/pico-sdk/src/common/pico_sync/lock_core.c:
+
+/home/tom/Documents/pico/pico-sdk/src/common/pico_sync/critical_section.c:
 
 /home/tom/Documents/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h:
 
@@ -3158,6 +3159,10 @@ generated/pico_base/pico/version.h:
 
 /usr/include/newlib/stdio.h:
 
+/home/tom/Documents/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h:
+
+/usr/include/newlib/ctype.h:
+
 /home/tom/Documents/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c:
 
 /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c:
@@ -3185,8 +3190,6 @@ generated/pico_base/pico/version.h:
 /home/tom/Documents/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h:
 
 /home/tom/Documents/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c:
-
-/home/tom/Documents/pico/pico-sdk/src/common/pico_sync/critical_section.c:
 
 /home/tom/Documents/pico/pico-sdk/src/common/pico_sync/include/pico/sem.h:
 
