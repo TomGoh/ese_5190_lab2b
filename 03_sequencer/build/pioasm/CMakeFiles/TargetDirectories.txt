@@ -1,0 +1,3 @@
+/Users/lize/pico/test/build/pioasm/CMakeFiles/pioasm.dir
+/Users/lize/pico/test/build/pioasm/CMakeFiles/edit_cache.dir
+/Users/lize/pico/test/build/pioasm/CMakeFiles/rebuild_cache.dir
