@@ -27,7 +27,7 @@
 const uint CAPTURE_PIN_BASE = 23;
 const uint CAPTURE_PIN_COUNT = 2;
 const uint CAPTURE_N_SAMPLES = 96;
-const uint TRIGGER_PIN = 22;
+const uint TRIGGER_PIN = 21;
 
 static inline uint bits_packed_per_word(uint pin_count) {
     // If the number of pins to be sampled divides the shift register size, we
