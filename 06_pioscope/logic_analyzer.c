@@ -24,10 +24,10 @@
 // Some logic to analyse:
 #include "hardware/structs/pwm.h"
 
-const uint CAPTURE_PIN_BASE = 23;
+const uint CAPTURE_PIN_BASE = 35; //PIN 32 for GPIO 23 and PIN 34 for GPIO 22
 const uint CAPTURE_PIN_COUNT = 2;
 const uint CAPTURE_N_SAMPLES = 96;
-const uint TRIGGER_PIN = 21;
+const uint TRIGGER_PINS = 32; //PIN 32 for GPIO 21 which is BOOT
 
 static inline uint bits_packed_per_word(uint pin_count) {
     // If the number of pins to be sampled divides the shift register size, we
@@ -133,7 +133,7 @@ int main() {
     logic_analyser_init(pio, sm, CAPTURE_PIN_BASE, CAPTURE_PIN_COUNT, 1.f);
 
     printf("Arming trigger\n");
-    logic_analyser_arm(pio, sm, dma_chan, capture_buf, buf_size_words, CAPTURE_PIN_BASE, true);
+    logic_analyser_arm(pio, sm, dma_chan, capture_buf, buf_size_words, TRIGGER_PINS, true);
 
     printf("Starting PWM example\n");
     // PWM example: -----------------------------------------------------------

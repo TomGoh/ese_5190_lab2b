@@ -1,0 +1,5 @@
+/home/tom/Documents/GitHub/ese_5190_lab2b/06_pioscope/build/elf2uf2/CMakeFiles/elf2uf2.dir
+/home/tom/Documents/GitHub/ese_5190_lab2b/06_pioscope/build/elf2uf2/CMakeFiles/edit_cache.dir
+/home/tom/Documents/GitHub/ese_5190_lab2b/06_pioscope/build/elf2uf2/CMakeFiles/rebuild_cache.dir
+/home/tom/Documents/GitHub/ese_5190_lab2b/06_pioscope/build/elf2uf2/boot_uf2_headers/CMakeFiles/edit_cache.dir
+/home/tom/Documents/GitHub/ese_5190_lab2b/06_pioscope/build/elf2uf2/boot_uf2_headers/CMakeFiles/rebuild_cache.dir
