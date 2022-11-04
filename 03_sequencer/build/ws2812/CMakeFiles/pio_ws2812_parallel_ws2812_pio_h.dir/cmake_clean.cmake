@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/Users/lize/pico/test/ws2812/generated/ws2812.pio.h"
+  "../../ws2812/generated/ws2812.pio.h"
   "CMakeFiles/pio_ws2812_parallel_ws2812_pio_h"
 )
 

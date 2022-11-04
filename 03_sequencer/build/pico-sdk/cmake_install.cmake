@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lize/pico/pico-sdk
+# Install script for directory: /home/tom/Documents/pico/pico-sdk
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "Release")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -34,14 +34,14 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/opt/homebrew/bin/arm-none-eabi-objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/arm-none-eabi-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/lize/pico/test/build/pico-sdk/tools/cmake_install.cmake")
-  include("/Users/lize/pico/test/build/pico-sdk/src/cmake_install.cmake")
-  include("/Users/lize/pico/test/build/pico-sdk/docs/cmake_install.cmake")
+  include("/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/tools/cmake_install.cmake")
+  include("/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/cmake_install.cmake")
+  include("/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/docs/cmake_install.cmake")
 
 endif()
 

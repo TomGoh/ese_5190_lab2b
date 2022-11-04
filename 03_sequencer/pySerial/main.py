@@ -1,5 +1,5 @@
 from time import sleep
-
+# conda install pySerial 
 import serial.tools.list_ports
 
 
@@ -22,10 +22,10 @@ if __name__ == '__main__':
     pressed = b's'
     no_press = b'k'
 
-    path = '/Users/lize/Desktop/test.txt'
+    path = './test.txt'
     port_list = list(serial.tools.list_ports.comports())
 
-    pico = serial.Serial('/dev/cu.usbmodem1101', 115200, timeout=0.05)
+    pico = serial.Serial('/dev/ttyACM0', 115200, timeout=0.05)
 
     recording = open(path, 'wb+')
     i = 0
