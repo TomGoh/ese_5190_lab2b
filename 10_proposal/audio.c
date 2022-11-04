@@ -43,12 +43,9 @@ int main(void){
     stdio_init_all(); // init stdio
     // sleep_ms(10000);
     set_sys_clock_khz(22000, true); // set sys clock
-    // printf("Hello, world!\n");
     init_audio((uint16_t)250); // init audio
-    // printf("Goodbye, world!\n");
 
     while (true){
         __wfi();
-        // printf("position: %d\n", position);
     }
 }
