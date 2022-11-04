@@ -1,0 +1,1 @@
+Based on the I2C protocal and the chart in part 5, implement the I2C protocol for APDS9960.

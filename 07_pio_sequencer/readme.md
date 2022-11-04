@@ -1,0 +1,1 @@
+After finalizing part 6, adapt the pio into the part 2 code into read and write registers.
