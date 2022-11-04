@@ -1,0 +1,8 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/03_sequencer",
+    "files.associations": {
+        "address_mapped.h": "c",
+        "addressmap.h": "c",
+        "platform_defs.h": "c"
+    }
+}
