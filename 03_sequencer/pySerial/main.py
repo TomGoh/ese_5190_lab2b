@@ -1,5 +1,4 @@
 from time import sleep
-# conda install pySerial 
 import serial.tools.list_ports
 
 

@@ -118,6 +118,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/tom/Documents/pico/pico-sdk/src/common/pico_usb_reset_interface/include"
   "/home/tom/Documents/pico/pico-sdk/src/rp2_common/hardware_pio/include"
   "/home/tom/Documents/pico/pico-sdk/src/rp2_common/hardware_dma/include"
+  "/home/tom/Documents/pico/pico-sdk/src/rp2_common/hardware_pwm/include"
   )
 
 # The set of dependency files which are needed:

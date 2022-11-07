@@ -24,10 +24,10 @@
 // Some logic to analyse:
 #include "hardware/structs/pwm.h"
 
-const uint CAPTURE_PIN_BASE = 35; //PIN 32 for GPIO 23 and PIN 34 for GPIO 22
-const uint CAPTURE_PIN_COUNT = 2;
-const uint CAPTURE_N_SAMPLES = 96;
-const uint TRIGGER_PINS = 32; //PIN 32 for GPIO 21 which is BOOT
+const uint CAPTURE_PIN_BASE = 22;
+const uint CAPTURE_PIN_COUNT = 1;
+const uint CAPTURE_N_SAMPLES = 9600;
+const uint TRIGGER_PIN = 21;
 
 static inline uint bits_packed_per_word(uint pin_count) {
     // If the number of pins to be sampled divides the shift register size, we
@@ -110,6 +110,8 @@ void print_capture_buf(const uint32_t *buf, uint pin_base, uint pin_count, uint3
 
 int main() {
     stdio_init_all();
+    while(stdio_usb_connected()!=true);
+    sleep_ms(10000);
     printf("PIO logic analyser example\n");
 
     // We're going to capture into a u32 buffer, for best DMA efficiency. Need
@@ -130,26 +132,26 @@ int main() {
     uint sm = 0;
     uint dma_chan = 0;
 
-    logic_analyser_init(pio, sm, CAPTURE_PIN_BASE, CAPTURE_PIN_COUNT, 1.f);
+    logic_analyser_init(pio, sm, CAPTURE_PIN_BASE, CAPTURE_PIN_COUNT, 64.f);
 
     printf("Arming trigger\n");
-    logic_analyser_arm(pio, sm, dma_chan, capture_buf, buf_size_words, TRIGGER_PINS, true);
+    logic_analyser_arm(pio, sm, dma_chan, capture_buf, buf_size_words, TRIGGER_PIN, false);
 
-    printf("Starting PWM example\n");
-    // PWM example: -----------------------------------------------------------
-    gpio_set_function(CAPTURE_PIN_BASE, GPIO_FUNC_PWM);
-    gpio_set_function(CAPTURE_PIN_BASE + 1, GPIO_FUNC_PWM);
-    // Topmost value of 3: count from 0 to 3 and then wrap, so period is 4 cycles
-    pwm_hw->slice[0].top = 3;
-    // Divide frequency by two to slow things down a little
-    pwm_hw->slice[0].div = 4 << PWM_CH0_DIV_INT_LSB;
-    // Set channel A to be high for 1 cycle each period (duty cycle 1/4) and
-    // channel B for 3 cycles (duty cycle 3/4)
-    pwm_hw->slice[0].cc =
-            (1 << PWM_CH0_CC_A_LSB) |
-            (3 << PWM_CH0_CC_B_LSB);
-    // Enable this PWM slice
-    pwm_hw->slice[0].csr = PWM_CH0_CSR_EN_BITS;
+    // printf("Starting PWM example\n");
+    // // PWM example: -----------------------------------------------------------
+    // gpio_set_function(CAPTURE_PIN_BASE, GPIO_FUNC_PWM);
+    // gpio_set_function(CAPTURE_PIN_BASE + 1, GPIO_FUNC_PWM);
+    // // Topmost value of 3: count from 0 to 3 and then wrap, so period is 4 cycles
+    // pwm_hw->slice[0].top = 3;
+    // // Divide frequency by two to slow things down a little
+    // pwm_hw->slice[0].div = 4 << PWM_CH0_DIV_INT_LSB;
+    // // Set channel A to be high for 1 cycle each period (duty cycle 1/4) and
+    // // channel B for 3 cycles (duty cycle 3/4)
+    // pwm_hw->slice[0].cc =
+    //         (1 << PWM_CH0_CC_A_LSB) |
+    //         (3 << PWM_CH0_CC_B_LSB);
+    // // Enable this PWM slice
+    // pwm_hw->slice[0].csr = PWM_CH0_CSR_EN_BITS;
     // ------------------------------------------------------------------------
 
     // The logic analyser should have started capturing as soon as it saw the
