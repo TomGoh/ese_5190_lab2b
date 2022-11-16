@@ -1,0 +1,46 @@
+.program sequencer
+.side_set 1
+
+; set pindirs, 0
+
+
+.wrap_target
+set pindirs, 1       side 0 [15]
+
+loop:
+    mov x, pins      side 0 [1]
+    jmp !x do_one    side 0 [1]
+do_zero:
+    nop              side 0 [5]
+    jmp loop         side 0 [5]
+do_one:
+    nop              side 1 [5]
+    jmp loop         side 1 [5]
+.wrap
+
+
+
+% c-sdk {
+
+#include "hardware/clocks.h"
+
+static inline void sequencer_program_init(PIO pio, uint sm, uint offset, uint pin, float freq) {
+  // 1. Define a config object
+  pio_gpio_init(pio, pin);
+  pio_sm_config config = sequencer_program_get_default_config(offset);
+
+  // 2. Set and initialize the output pins
+  pio_sm_set_in_pins(pio, sm, 21);
+  sm_config_set_sideset_pins(&config, pin);
+;   sm_config_set_set_pins(&config, pin, 1);
+
+  // 
+  int cycles_per_bit = 16;
+  float div=clock_get_hz(clk_sys) / (freq*cycles_per_bit);
+  sm_config_set_clkdiv(&config, div);
+
+  // 3. Apply the configuration & activate the State Machine
+  pio_sm_init(pio, sm, offset, &config);
+  pio_sm_set_enabled(pio, sm, true);
+}
+%}
