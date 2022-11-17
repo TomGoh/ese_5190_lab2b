@@ -190,19 +190,19 @@ The connection between oscilloscope and APDS9960.
 
 We use the first probe (X probe) to connect to the SDA with x10, the second probe(Y probe) to the CLK, and two associated black probes to the GND. 
 
-![img](/assets/5_4.png)
+![img](/05_i2c_traffic/assets/fig_1-min.png)
 
 ### What shows in the oscilloscope: 
 
-![img](/assets/5_1.png)
+![img](/05_i2c_traffic/assets/fig_2-min.png)
 
 
 
-![img](/assets/5_2.png)
+![img](/05_i2c_traffic/assets/fig_3-min.png)
 
 
 
-![img](/assets/5_3.png)
+![img](/05_i2c_traffic/assets/fig_4-min.png)
 
 
 ## <span id="6">Chapter 6 06_pioscope<span>
@@ -215,12 +215,18 @@ We use the first probe (X probe) to connect to the SDA with x10, the second prob
 
 3. give your sequencer the ability to select a range of output rates for both live and recorded input 
 
+First, we need to change the pin value of pio_analyser.
+```c
+const uint CAPTURE_PIN_BASE = 22;
+const uint CAPTURE_PIN_COUNT = 1;
+const uint CAPTURE_N_SAMPLES = 9600;
+const uint TRIGGER_PIN = 21;
+```
+
 
 ![img](/06_pioscope/assests/06_logic.jpg)
 
-From the above figure, During t
-e one data
-
+From the above figure, during 
 
 ## <span id="7"> Chapter 7 07_pio_sequencer <span>
 
@@ -328,8 +334,8 @@ The result could be as follows:
 >   2. Run the experiment for at least 100 samples at brightness settings of 0%, 25%, 50%, 75%, 100% (making sure to give the ADPS reading enough time to 'settle' each time Neopixel is turned off).
 >   3. Report the observed 'jitter' based on misalignment with the free-running PWM module on the WS2012.
 
-
-
+### Intro
+In this part, we combine what we have in the section 8 with ws2812 program we already have to build up a system tha 
 
 The effect of this part is as follows:
 ![](/assets/09.gif)
@@ -341,7 +347,7 @@ The effect of this part is as follows:
 
 Add support for your custom circuit board to your sequencer, and give a demo.
 
-### Intro:
+### Intro
 In this part, we use PWM to functionality in GPIO to generate the specific wave for different scale in music, which could be used in the speaker to play. 
 
 ### Initialize the PWM
