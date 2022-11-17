@@ -35,7 +35,7 @@ int main(){
     APDS9960_init(pio, sm, addr, false);
     
     struct Info info;
-    
+
     while(true){
         sleep_ms(1000);
         readInfo(&info, pio, sm, addr, false); 
