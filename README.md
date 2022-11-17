@@ -178,6 +178,45 @@ Then, we use the I/O stream of Python to Read/Write the Button Data in a txt fil
 
 ### Finally, by sending s/k, RP2040 can change the status of BOOT button.
 
+## <span id="4">Chapter 4 04_slow_motion<span>
+
+### TODO:
+- Update your sequencer to be able to slow down and speed up recordings/replay. On the input side, the goal is ultimately to be able to handle the full 4 Gbps "firehose" from the PIO logic analyzer example in the SDK manual, which would fill up 256Kb of RAM in only 31 µs at a system clock speed of 125000 MHz if captured 'raw'! On the output side, the goal is to be able to output precisely timed sequences from the PIO at system clock resolution based on a handful of control points.
+
+First,we should define the Recording Function:
+
+```c
+void recording(int button_counter,uint32_t color,int time){
+    int counter = button_counter;
+    while(counter!=0){
+        set_neopixel_color(color);
+        counter--;
+        sleep_ms(time);
+    }
+}
+
+```
+
+Second, using character '1' to add the delay time which can lead to decrease the recording time and character '0' to minus the delay time which can lead to increase the recording time.
+
+```c
+case '1':
+                delay_time++; //set the Recording time
+                break; 
+case '0':
+                delay_time--; //set the Recording time
+                break;
+```
+
+Finally, using the case 'r' to record the Button status.
+
+```c
+case 'r':
+                recording(button_counter,status.light_color,delay_time);
+                break;
+```
+
+
 
 ## <span id="5">Chapter 5 05_i2c_traffic<span>
 
@@ -224,9 +263,9 @@ const uint TRIGGER_PIN = 21;
 ```
 
 
-![img](/06_pioscope/assests/06_logic.jpg)
+![img](/06_pioscope/assests/06.png)
 
-From the above figure, during 
+
 
 ## <span id="7"> Chapter 7 07_pio_sequencer <span>
 
@@ -335,7 +374,49 @@ The result could be as follows:
 >   3. Report the observed 'jitter' based on misalignment with the free-running PWM module on the WS2012.
 
 ### Intro
-In this part, we combine what we have in the section 8 with ws2812 program we already have to build up a system tha 
+In this part, we combine what we have in the section 8 with ws2812 program we already have to build up a system that could diliver the information from APDS9960 to WS2812 with the help of PIO. 
+
+### Main
+In `main.c`  we first initialize our i2c and APDS9960 program we have in the section 8, and in the main loop, we periodically read the data from PIO and pass the data using GPIO to WS2812. Notice that we save our APDS9960 in `pio0` and save WS2812 in `pio1`.
+
+1. Initialize the i2c and APDS9960 program.
+```c
+    // Initialize the PIO
+    uint offset_0 = pio_add_program(pio_0, &i2c_program);
+    // Initialize the 
+    i2c_program_init(pio_0, sm_0, offset_0, PIN_SDA, PIN_SCL);
+    APDS9960_init(pio_0, sm_0, addr, false);
+```
+
+1. Pass data in WS2812. Here we encapsulate the whole process including from initialization to transmitting data. As we said before, we use `info` struct to save the data. 
+```c
+    set_neopixel_color(rgb_to_neopixel(info.r, info.g, info.b));
+```
+
+### APDS9960 program
+Since we have already explain this part, we skip it in this section. 
+
+### WS2812 program
+We encapsulate all process in `set_neopixel_color` function and use `pio_sm_put_blocking` to pass all data into WS2812. Here is some part of code in `set_neopixel_color`. 
+
+```c
+    // Initialize the pio program 
+    uint offset = pio_add_program(pio, &ws2812_program);
+
+    // Initialize the WS2812 program 
+    ws2812_program_init(pio, sm, offset, WS2812_PIN, 800000, IS_RGBW);
+
+    // Change the form of color.   
+    uint32_t result=((uint32_t)(color&0xff0000) >>8) | ((uint32_t)(color&0x00ff00)<<8) | ((uint32_t)(color&0x0000ff));
+
+    // pass color into pio 
+    pio_sm_put_blocking(pio1, 1, result << 8u);
+```
+
+### Conclusion
+Finally, We could use two PIOs in a RP2040 to complete the data transmission from APDS9960 to WS2812. 
+
+
 
 The effect of this part is as follows:
 ![](/assets/09.gif)

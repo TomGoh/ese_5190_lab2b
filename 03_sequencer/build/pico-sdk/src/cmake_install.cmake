@@ -1,4 +1,4 @@
-# Install script for directory: /home/tom/Documents/pico/pico-sdk/src
+# Install script for directory: /Users/haozewu/Documents/pico/pico-sdk/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,14 +34,14 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/arm-none-eabi-objdump")
+  set(CMAKE_OBJDUMP "/opt/homebrew/bin/arm-none-eabi-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/common/cmake_install.cmake")
-  include("/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cmake_install.cmake")
-  include("/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2040/cmake_install.cmake")
+  include("/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/common/cmake_install.cmake")
+  include("/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cmake_install.cmake")
+  include("/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2040/cmake_install.cmake")
 
 endif()
 

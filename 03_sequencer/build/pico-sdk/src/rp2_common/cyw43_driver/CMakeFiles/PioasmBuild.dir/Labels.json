@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild.rule"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild-complete.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild-complete.rule"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule"
 		},
 		{
-			"file" : "/home/tom/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule"
+			"file" : "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule"
 		}
 	],
 	"target" : 

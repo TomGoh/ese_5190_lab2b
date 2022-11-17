@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "../../ws2812/generated/ws2812.py"
+  "/Users/haozewu/Documents/GitHub/ese_5190_lab2b/03_sequencer/ws2812/generated/ws2812.py"
   "CMakeFiles/pio_ws2812_datasheet"
 )
 
