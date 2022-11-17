@@ -18,7 +18,7 @@ int main() {
     while(true){
         
        
-        add = base + 0x0a8;
+        add = base + 0x0a8; // add is the address of the button's status register
 
         uint32_t button_value = *add;
 
